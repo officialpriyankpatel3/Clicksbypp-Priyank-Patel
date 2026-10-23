@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0c0f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Clicks by PP Studio Desk — Black Camera Flash Luxury v12</title>
+<link rel="manifest" href="manifest.json">
+<style>
+:root{--bg:#0b0c0f;--panel:#13151a;--panel2:#191c22;--line:#2a2d35;--text:#f4f2ed;--muted:#969ba7;--gold:#c8a96a;--gold2:#ead5a2;--green:#8dc5a0;--red:#e28b87}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top right,#29241b 0,transparent 34%),var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.1px}
+button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{max-width:760px;margin:auto;padding:18px 15px 95px}
+.top{display:flex;align-items:center;justify-content:space-between;padding:9px 2px 22px}.brand{display:flex;gap:12px;align-items:center}.logo{width:44px;height:44px;border:1px solid #8f7747;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#272116,#101114);color:var(--gold2);font-size:22px;box-shadow:0 0 22px #c8a96a12}.brand h1{font-size:16px;letter-spacing:1.6px;margin:0;font-weight:650}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px;margin-top:4px}.today{font-size:11px;color:var(--gold2);border:1px solid #51452e;padding:8px 10px;border-radius:20px}
+.hero{position:relative;overflow:hidden;border:1px solid #3a3325;border-radius:24px;padding:23px 20px 20px;background:linear-gradient(125deg,#211e18,#15161a 60%,#111216);margin-bottom:15px}
+.hero:after{content:"";position:absolute;width:170px;height:170px;border:1px solid #c8a96a24;border-radius:50%;right:-45px;top:-35px;box-shadow:0 0 0 18px #c8a96a08,0 0 0 38px #c8a96a05;animation:orbit 18s linear infinite}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.eyebrow{font-size:10px;letter-spacing:2.4px;color:var(--gold2);text-transform:uppercase}.hero h2{font-size:28px;line-height:1.1;margin:10px 0 8px;font-weight:600;max-width:330px}.hero p{font-size:12px;line-height:1.6;color:#b6b4ae;margin:0;max-width:330px}.hero-actions{display:flex;gap:8px;margin-top:18px;position:relative;z-index:1}
+.btn{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#202229;color:var(--text);font-size:12px;font-weight:600}.btn.primary{background:linear-gradient(135deg,#d8bf88,#a98a4e);border-color:#d8bf88;color:#17140e}.btn.ghost{background:#111216}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:14px 0}.stat{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:14px 12px}.stat span{font-size:10px;color:var(--muted)}.stat strong{display:block;font-size:22px;margin-top:7px;font-weight:600}.stat em{font-size:10px;color:var(--gold2);font-style:normal}
+.tabs{display:flex;gap:6px;overflow:auto;padding:4px 0 13px;scrollbar-width:none}.tab{white-space:nowrap;background:transparent;color:var(--muted);border:1px solid transparent;border-radius:10px;padding:10px 13px;font-size:12px}.tab.active{background:#24221d;border-color:#51452e;color:var(--gold2)}
+.section{display:none}.section.active{display:block}.section-head{display:flex;align-items:center;justify-content:space-between;margin:8px 2px 12px}.section-head h3{font-size:17px;margin:0;font-weight:600}.section-head p{font-size:11px;color:var(--muted);margin:5px 0 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:15px;margin-bottom:11px}.empty{text-align:center;color:var(--muted);padding:28px 16px;font-size:12px;line-height:1.7}.booking-title{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.booking-title h4{margin:0 0 5px;font-size:15px;font-weight:600}.muted{color:var(--muted);font-size:11px}.pill{display:inline-flex;border:1px solid #4d422b;color:var(--gold2);border-radius:20px;padding:5px 8px;font-size:10px;white-space:nowrap}.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.mini{background:#1d2026;border:1px solid #30343d;color:#c8cbd2;padding:7px 9px;border-radius:9px;font-size:10px}.money{font-size:17px;font-weight:650;color:var(--gold2)}.detailgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:13px}.detail{background:#191b20;border-radius:10px;padding:10px}.detail small{display:block;color:var(--muted);font-size:10px;margin-bottom:5px}.detail b{font-size:12px;font-weight:550}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:10px;color:#b7bbc4;letter-spacing:.5px}.field input,.field select,.field textarea{width:100%;min-width:0;background:#0e1014;border:1px solid #30343d;color:var(--text);padding:12px;border-radius:10px;outline:none;font-size:13px}.field textarea{resize:vertical;min-height:72px}.field input:focus,.field select:focus,.field textarea:focus{border-color:#9c824c}.form-actions{display:flex;gap:8px;margin-top:14px}.form-actions .btn{flex:1}
+.monthbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.monthbar button{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:9px;padding:8px 12px}.monthbar strong{font-size:14px}.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}.dayname{text-align:center;font-size:9px;color:var(--muted);padding:7px 0}.day{min-height:49px;border:1px solid #242730;border-radius:9px;background:#121419;color:var(--text);padding:5px;font-size:11px;position:relative;text-align:left}.day.blank{background:transparent;border-color:transparent}.day.today{border-color:var(--gold)}.day.booked:after{content:"";position:absolute;bottom:5px;left:6px;width:5px;height:5px;background:var(--gold);border-radius:50%}.day.travel:before{content:"";position:absolute;bottom:5px;left:15px;width:5px;height:5px;background:#80b6a0;border-radius:50%}.legend{display:flex;gap:12px;color:var(--muted);font-size:10px;margin-top:11px}.legend span:before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-right:5px}.legend span+span:before{background:#80b6a0}
+.notice{font-size:11px;line-height:1.6;color:#d8c69e;background:#292319;border:1px solid #4d422b;padding:11px;border-radius:11px;margin-bottom:12px}.foot{text-align:center;color:#626772;font-size:9px;letter-spacing:1.5px;margin-top:27px}
+@media(max-width:420px){.hero h2{font-size:25px}.formgrid{grid-template-columns:1fr 1fr}.detailgrid{grid-template-columns:1fr 1fr}.stat strong{font-size:19px}.day{min-height:43px}}
+
+/* Cinematic luxury motion layer */
+:root{scroll-behavior:smooth}
+body{background-image:radial-gradient(ellipse at 15% -10%,rgba(199,164,91,.10),transparent 38%),radial-gradient(ellipse at 100% 30%,rgba(199,164,91,.045),transparent 32%)}
+header,.hero,.stat,.card,.panel,.section-head,.tabs{animation:riseIn .65s cubic-bezier(.2,.75,.25,1) both}
+header{animation-delay:.03s}.hero{animation-delay:.08s}.stat:nth-child(1){animation-delay:.10s}.stat:nth-child(2){animation-delay:.16s}.stat:nth-child(3){animation-delay:.22s}
+.card,.panel{transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease}
+.card:hover,.panel:hover{transform:translateY(-2px);border-color:rgba(214,181,111,.35);box-shadow:0 14px 35px rgba(0,0,0,.16)}
+button{transition:transform .18s ease,filter .25s ease,background .25s ease,border-color .25s ease}
+button:active{transform:scale(.97)}
+.tab.active{box-shadow:0 0 22px rgba(204,169,97,.10)}
+input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(204,169,97,.10)}
+.section.active{animation:sectionReveal .36s ease both}
+@keyframes riseIn{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:translateY(0)}}
+@keyframes sectionReveal{from{opacity:.45;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@keyframes goldPulse{0%,100%{box-shadow:0 0 0 rgba(214,181,111,0)}50%{box-shadow:0 0 22px rgba(214,181,111,.22)}}
+.brand-mark{animation:brandReveal 1s cubic-bezier(.16,1,.3,1) both}
+@keyframes brandReveal{from{opacity:0;transform:translateY(8px) scale(.97);letter-spacing:.24em}to{opacity:1;transform:translateY(0) scale(1);letter-spacing:.08em}}
+.success-toast{position:fixed;left:50%;bottom:22px;z-index:100;transform:translate(-50%,18px);opacity:0;pointer-events:none;background:#17150f;border:1px solid rgba(214,181,111,.55);color:#f5e7c2;padding:13px 18px;border-radius:14px;box-shadow:0 12px 40px #0008;transition:all .3s ease;font-size:13px}
+.success-toast.show{opacity:1;transform:translate(-50%,0);animation:goldPulse 1.2s ease}
+.history-tools{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0 16px}
+.history-tools input,.history-tools select{min-width:0}
+.history-label{font-size:10px;letter-spacing:.15em;color:var(--gold,#c7a45b);text-transform:uppercase;margin:4px 0 12px}
+@media(max-width:520px){.history-tools{grid-template-columns:1fr}.card:hover,.panel:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+
+/* Studio-grade cinematic graphics */
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(circle at 12% 18%,rgba(214,181,111,.09),transparent 22%),radial-gradient(circle at 88% 72%,rgba(214,181,111,.055),transparent 26%)}
+.ambient-canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.58}
+.wrap{position:relative;z-index:1}
+.hero{isolation:isolate;min-height:205px;background:linear-gradient(115deg,rgba(37,31,21,.98),rgba(19,20,24,.96) 58%,rgba(12,13,16,.98));}
+.hero:before{content:"";position:absolute;width:200px;height:200px;right:-35px;bottom:-86px;border:1px solid rgba(226,196,129,.35);border-radius:50%;box-shadow:0 0 0 12px rgba(226,196,129,.035),0 0 0 27px rgba(226,196,129,.03),inset 0 0 35px rgba(226,196,129,.06);animation:slowSpin 24s linear infinite;z-index:-1}
+.hero:after{content:none!important;display:none!important}
+.hero h2{position:relative;z-index:1;text-shadow:0 3px 22px #0008}.hero p,.hero .eyebrow,.hero-actions{position:relative;z-index:2}
+.logo{position:relative;overflow:hidden;box-shadow:0 0 0 4px rgba(202,169,106,.035),0 0 28px rgba(202,169,106,.12);animation:logoBreath 4s ease-in-out infinite}
+.logo:after{content:"";position:absolute;inset:-60%;background:linear-gradient(110deg,transparent 42%,rgba(255,235,180,.42) 50%,transparent 58%);transform:translateX(-100%);animation:logoSweep 5s ease-in-out infinite}
+.stat{position:relative;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}.stat:after{content:"";position:absolute;left:12px;right:12px;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.5}
+.stat strong{background:linear-gradient(100deg,#fff5d8,#c8a96a 55%,#fff0c8);background-clip:text;-webkit-background-clip:text;color:transparent}
+.btn.primary{box-shadow:0 5px 18px rgba(200,169,106,.13);position:relative;overflow:hidden}.btn.primary:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.42) 50%,transparent 75%);transform:translateX(-130%);transition:transform .7s}.btn.primary:hover:after{transform:translateX(130%)}
+.card{position:relative;overflow:hidden}.card:before{content:"";position:absolute;top:0;left:15px;right:15px;height:1px;background:linear-gradient(90deg,transparent,rgba(210,179,111,.32),transparent)}
+ .splash{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:radial-gradient(ellipse at center,#fffdf7 0%,#f8f0df 55%,#efe0c3 100%);color:#211a12;transition:opacity .8s ease,visibility .8s ease;overflow:hidden}
+.splash:before{content:"";position:absolute;width:min(85vw,460px);aspect-ratio:1;border:1px solid #c49a52; border-radius:50%;box-shadow:0 0 0 18px #c49a520b,0 0 0 42px #c49a5208, inset 0 0 50px #c49a5214;animation:haloDrift 4s ease-in-out infinite}
+.splash:after{content:"";position:absolute;inset:0;background:#fffef8;opacity:0;pointer-events:none;animation:flashBurst 4.25s ease-in-out both}
+.splash.hide{opacity:0;visibility:hidden;pointer-events:none}
+.splash-inner{text-align:center;position:relative;z-index:2;padding:24px}
+.splash-lens{width:clamp(145px,42vw,210px);height:clamp(145px,42vw,210px);margin:0 auto 34px;border:3px solid #c9a45e;border-radius:50%;display:grid;place-items:center;position:relative;background:radial-gradient(circle at 34% 27%,#5b4a31 0%,#252019 20%,#100f0d 55%,#3e2c15 70%,#e0bd78 74%,#6e4b1e 78%,#f7e6c0 81%,#c19a52 84%,#f8edda 88%);box-shadow:0 18px 35px #7c5b242c,inset 0 0 16px #f4d99a77;animation:lensIn 1s cubic-bezier(.16,1,.3,1) both, cameraClick 4.1s 0.6s ease-in-out both}
+.splash-lens:before{content:"";position:absolute;inset:11px;border:1px solid #e6c987;border-radius:50%;box-shadow:inset 0 0 15px #000b,0 0 12px #f6d58b55}
+.splash-lens:after{content:"";position:absolute;inset:20px;border:1px solid #c59b51;border-radius:50%;opacity:.8}
+.aperture{width:72%;height:72%;border:2px solid #d4b36d;border-radius:50%;position:relative;display:grid;place-items:center;background:radial-gradient(circle,#0b0a08 0 28%,#5b4a30 45%,#17140f 68%,#d0a75d 70%,#241b10 74%);box-shadow:inset 0 0 23px #000,0 0 20px #f5d99a33;overflow:hidden}
+.aperture:before{content:"";position:absolute;inset:8%;border-radius:50%;background:conic-gradient(from 0deg,#211b12 0 12%,#8d7448 12% 15%,#302619 15% 27%,#b29a6a 27% 30%,#211b12 30% 42%,#8d7448 42% 45%,#302619 45% 57%,#b29a6a 57% 60%,#211b12 60% 72%,#8d7448 72% 75%,#302619 75% 87%,#b29a6a 87% 90%,#211b12 90%);clip-path:polygon(50% 0,86% 14%,100% 50%,86% 86%,50% 100%,14% 86%,0 50%,14% 14%);transform:scale(.88) rotate(0);animation:shutterIris 4.1s .6s cubic-bezier(.3,.05,.4,1) both}
+.aperture:after{content:"";width:13px;height:13px;border-radius:50%;background:#fff4cc;box-shadow:0 0 9px 4px #ffe7a4,0 0 28px 12px #e9bd63;position:relative;z-index:2;opacity:0;animation:innerFlash 4.1s .6s ease both}
+.splash-wordmark{font-size:clamp(26px,7vw,42px);font-weight:400;letter-spacing:.22em;color:#211a12;animation:splashTitle 1s 2.35s cubic-bezier(.16,1,.3,1) both}
+.splash-sub{margin-top:13px;font-size:9px;letter-spacing:.32em;color:#8b6329;animation:riseIn 1s 2.55s both}
+.splash-line{height:2px;width:160px;margin:27px auto 0;background:#e6d7ba;border-radius:4px;overflow:hidden}
+.splash-line span{display:block;height:100%;width:0;background:linear-gradient(90deg,#a97728,#fff0b6,#b58b3d);animation:loadingLine 2s .8s ease forwards}
+.splash-caption{font-size:9px;letter-spacing:.25em;color:#8b7a5c;margin-top:12px;animation:riseIn 1s 2.8s both}
+@keyframes haloDrift{0%,100%{transform:scale(.98);opacity:.65}50%{transform:scale(1.03);opacity:1}}
+@keyframes cameraClick{0%,12%,20%,100%{transform:scale(1) rotate(0)}14%{transform:scale(.95) rotate(-1deg)}17%{transform:scale(1.035) rotate(1deg)}23%{transform:scale(1) rotate(0)}}
+@keyframes shutterIris{0%,15%{transform:scale(1) rotate(0);filter:brightness(.75)}28%{transform:scale(.76) rotate(20deg);filter:brightness(1.1)}39%{transform:scale(.18) rotate(75deg);filter:brightness(1.8)}48%{transform:scale(.08) rotate(110deg);filter:brightness(2.8)}54%,70%{transform:scale(.12) rotate(135deg);filter:brightness(2.2)}82%,100%{transform:scale(1) rotate(220deg);filter:brightness(1)}}
+@keyframes innerFlash{0%,35%,76%,100%{opacity:0;transform:scale(.2)}43%,58%{opacity:1;transform:scale(2.8)}}
+@keyframes flashBurst{0%,38%,75%,100%{opacity:0}43%,53%{opacity:.96}48%{opacity:1}}
+@keyframes slowSpin{to{transform:rotate(360deg)}}
+@keyframes splashTitle{from{opacity:0;letter-spacing:.45em;transform:translateY(10px)}to{opacity:1;letter-spacing:.22em;transform:translateY(0)}}
+@keyframes lensIn{from{opacity:0;transform:scale(.72) rotate(-35deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes riseIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes loadingLine{to{width:100%}}
+@media(prefers-reduced-motion:reduce){.splash,.splash *{animation:none!important;transition:none!important}}
+
+/* v12 BLACK + CHAMPAGNE GOLD LUXURY THEME */
+.ambient-canvas{opacity:.22}
+.logo{background:linear-gradient(145deg,#302719,#101114);color:#f0d99d;border-color:#9f8045;box-shadow:0 0 22px rgba(200,169,106,.12)}
+.brand h1{color:#f5f1e8}.brand small{color:#a7a3a0}
+.today{color:#f0d99d;border-color:#62502f;background:rgba(20,19,17,.82)}
+.hero{background:linear-gradient(118deg,rgba(37,31,21,.98),rgba(19,20,24,.97) 58%,rgba(12,13,16,.98));border-color:#4c4028;box-shadow:0 12px 35px rgba(0,0,0,.28)}
+.hero:before{border-color:rgba(214,181,111,.28);box-shadow:0 0 0 12px rgba(214,181,111,.045),0 0 0 27px rgba(214,181,111,.025),inset 0 0 35px rgba(214,181,111,.04)}
+.hero h2{color:#f5f1e8;text-shadow:0 2px 18px rgba(0,0,0,.22)}.hero p{color:#b9b6b0}.eyebrow{color:#e2c889}
+.btn{background:#1b1d22;color:#f4f2ed;border-color:#333640;box-shadow:0 3px 12px rgba(0,0,0,.12)}
+.btn.ghost{background:#111216;color:#f4f2ed;border-color:#30323a}
+.btn.primary{background:linear-gradient(135deg,#f0d99d,#b58b43);border-color:#d5b66d;color:#17130b;box-shadow:0 7px 20px rgba(183,122,25,.15)}
+.stat,.card{background:rgba(19,21,26,.96);border-color:#2e313a;box-shadow:0 7px 22px rgba(0,0,0,.18)}
+.stat strong{background:linear-gradient(100deg,#fff5d8,#d4b36d 65%,#fff0c8);background-clip:text;-webkit-background-clip:text;color:transparent}
+.stat em{color:#e0c88f}.stat:after{background:linear-gradient(90deg,transparent,#c8a96a,transparent)}
+.tabs{background:rgba(13,14,17,.92);border-bottom-color:rgba(200,169,106,.16)}
+.tab{color:#a5a8b1}.tab.active{background:#29241b;border-color:#5b492b;color:#f0d99d;box-shadow:0 4px 14px rgba(183,122,25,.10)}
+.section-head h3{color:#f3f0e9}.section-head p,.muted{color:#9da1ab}
+.pill{background:#282217;border-color:#6b542b;color:#f0d99d}.completed-pill{background:#17271f;border-color:#315c43;color:#9dd1ac}
+.mini{background:#1b1e24;border-color:#333741;color:#c9cbd1}.money{color:#f0d99d}
+.detail{background:#191b20;border:1px solid #292c33}.detail small{color:#a0a3ac}.detail b{color:#f2efe8}
+.field label{color:#c0bcb4}
+.field input,.field select,.field textarea,.history-tools input,.history-tools select{background:#0e1014;border-color:#30343d;color:#f4f2ed;box-shadow:inset 0 1px 2px rgba(0,0,0,.12)}
+.field input::placeholder,.field textarea::placeholder,.history-tools input::placeholder{color:#777d89}
+.field input:focus,.field select:focus,.field textarea:focus,.history-tools input:focus,.history-tools select:focus{border-color:#c99b44;box-shadow:0 0 0 3px rgba(201,155,68,.14)}
+.monthbar button,.day{background:#121419;color:#f4f2ed;border-color:#292d36}
+.day.today{border-color:#c38b2b;background:#302719;box-shadow:0 0 0 2px rgba(195,139,43,.08)}
+.day.booked:after{background:#d5b66d}.day.travel:before{background:#80b6a0}.day.blank{background:transparent}
+.dayname{color:#969ba7}.legend{color:#969ba7}.legend span:before{background:#d5b66d}.legend span+span:before{background:#80b6a0}
+.notice{color:#e4d09b;background:#292319;border-color:#5a492b}.foot{color:#696f7b}.history-label{color:#d0ac63}
+.success-toast{background:#17150f;border-color:rgba(214,181,111,.55);color:#f5e7c2;box-shadow:0 12px 40px #0008}
+.upcoming-pulse{border-color:rgba(214,181,111,.9)!important;box-shadow:0 0 0 1px rgba(197,139,43,.12),0 8px 28px rgba(197,139,43,.13);animation:creamUpcomingPop 2.2s ease-in-out infinite}
+.countdown-pill{border-color:#8e7137;background:linear-gradient(135deg,#3a2d18,#211a10);color:#f4d98f;box-shadow:0 3px 13px rgba(183,122,25,.12)}
+.alert-backdrop{background:rgba(0,0,0,.72)}
+.date-alert{background:linear-gradient(145deg,#1b1c20,#111216 75%);border-color:#9c7a3d;box-shadow:0 24px 90px rgba(0,0,0,.55),0 0 45px rgba(200,157,66,.12)}
+.date-alert .alert-icon{background:linear-gradient(145deg,#3b2e19,#21190d);border-color:#b48a3d;color:#f2d88f;box-shadow:0 0 26px rgba(200,157,66,.18)}
+.date-alert h3{color:#f5f1e8}.date-alert p{color:#b4b0a8}.date-alert .alert-date{color:#f0d18a}
+.splash{background:radial-gradient(ellipse at center,#252017 0%,#101114 54%,#07080a 100%);color:#f4f0e7}
+.splash:before{border-color:#b58b43;box-shadow:0 0 0 18px rgba(200,169,106,.06),0 0 0 42px rgba(200,169,106,.035),inset 0 0 50px rgba(200,169,106,.08)}
+.splash:after{background:#fff8e8}
+.splash-wordmark{color:#f7f1e6}
+.splash-sub{color:#d0ac63}
+.splash-lens{border-color:rgba(214,181,111,.8);box-shadow:0 0 45px rgba(183,122,25,.18),inset 0 0 25px rgba(214,181,111,.1)}
+.splash-lens:before,.splash-lens:after{border-color:rgba(214,181,111,.35)}
+.aperture{border-color:#d0ac63;filter:drop-shadow(0 0 9px rgba(200,169,106,.18))}
+.aperture:before{background:conic-gradient(from 10deg,transparent 0 12%,#d0ac63 12% 23%,transparent 23% 29%,#d0ac63 29% 40%,transparent 40% 46%,#d0ac63 46% 57%,transparent 57% 63%,#d0ac63 63% 74%,transparent 74% 80%,#d0ac63 80% 91%,transparent 91%)}
+.splash-line{background:#393124}.splash-line span{background:linear-gradient(90deg,#b77a19,#fff0c7,#b08d50)}
+.splash-caption{color:#b9a47c}
+.hero{background-image:radial-gradient(circle at 88% 52%,rgba(198,153,68,.10),transparent 25%),linear-gradient(118deg,rgba(37,31,21,.98),rgba(19,20,24,.97) 58%,rgba(12,13,16,.98))}
+.hero:before{width:145px;height:145px;right:-38px;bottom:-70px;border-width:2px;box-shadow:0 0 0 9px rgba(214,181,111,.045),0 0 0 20px rgba(214,181,111,.035),inset 0 0 25px rgba(214,181,111,.07)}
+@keyframes creamUpcomingPop{0%,100%{transform:scale(1);box-shadow:0 0 0 1px rgba(197,139,43,.10),0 7px 22px rgba(197,139,43,.08)}50%{transform:scale(1.004);box-shadow:0 0 0 2px rgba(197,139,43,.20),0 10px 30px rgba(197,139,43,.18)}}
+@media(prefers-reduced-motion:reduce){.upcoming-pulse{animation:none!important}}
+
+
+
+/* v10: animated camera shutter + tasteful flash, black and champagne-gold luxury */
+.camera-stage{position:absolute;right:18px;top:18px;width:108px;height:78px;z-index:0;pointer-events:none;filter:drop-shadow(0 8px 12px rgba(81,53,13,.16));animation:cameraNudge 4.8s ease-in-out infinite}
+.camera-body{position:absolute;left:12px;right:4px;bottom:8px;height:48px;border-radius:10px;background:linear-gradient(145deg,#35332e,#101114 70%);border:1px solid #c9a65c;box-shadow:inset 0 2px 2px #ffffff2c,inset 0 -4px 9px #0008}
+.camera-top{position:absolute;left:29px;top:8px;width:39px;height:18px;border-radius:6px 6px 0 0;background:linear-gradient(145deg,#282722,#0b0c0d);border:1px solid #c9a65c;border-bottom:0}
+.camera-viewfinder{position:absolute;left:42px;top:1px;width:20px;height:10px;border-radius:4px 4px 0 0;background:#1b1a17;border:1px solid #c9a65c}
+.camera-lens{position:absolute;left:32px;top:16px;width:42px;height:42px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#c9a65c 0 4%,#39342a 9%,#0b0c0d 22%,#71603f 26%,#191817 34%,#090a0b 55%,#b88c3e 58%,#181716 64%,#050607 75%);border:3px solid #b89a5a;box-shadow:0 0 0 3px #171615, inset 0 0 9px #000;transform-origin:center;animation:shutterSnap 4.8s ease-in-out infinite}
+.camera-lens:after{content:"";position:absolute;inset:11px;border:1px solid #dfc37b77;border-radius:50%;box-shadow:0 0 8px #d7b45b55}
+.camera-flash{position:absolute;right:6px;top:0;width:25px;height:22px;border-radius:5px;background:linear-gradient(135deg,#fffef8,#f1d58a 55%,#c18a25);border:1px solid #d2ad5b;transform-origin:bottom left;animation:flashFire 4.8s infinite;box-shadow:0 0 0 rgba(255,220,130,0)}
+.camera-flash:after{content:"";position:absolute;left:50%;top:50%;width:100px;height:100px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,#fff8d9a8 0,rgba(255,220,132,.26) 20%,rgba(255,220,132,0) 70%);opacity:0;animation:flashGlow 4.8s infinite}
+.camera-click-label{position:absolute;right:0;bottom:-7px;font-size:7px;letter-spacing:1.8px;font-weight:800;color:#986718;white-space:nowrap;animation:labelBlink 4.8s infinite}
+.hero>.eyebrow,.hero>h2,.hero>p,.hero>.hero-actions{position:relative;z-index:1}
+@keyframes cameraNudge{0%,38%,48%,100%{transform:translateY(0) rotate(0)}42%{transform:translateY(2px) rotate(-1.8deg)}45%{transform:translateY(0) rotate(1deg)}}
+@keyframes shutterSnap{0%,39%,48%,100%{transform:scale(1)}42%{transform:scale(.88)}45%{transform:scale(1.04)}}
+@keyframes flashFire{0%,39%,48%,100%{opacity:.72;filter:brightness(1);transform:scale(1)}41%,44%{opacity:1;filter:brightness(1.8);transform:scale(1.12);box-shadow:0 0 18px 7px rgba(255,220,130,.7)}}
+@keyframes flashGlow{0%,39%,48%,100%{opacity:0}41%,44%{opacity:1}}
+@keyframes labelBlink{0%,39%,48%,100%{opacity:.65}41%,44%{opacity:1}}
+@media(max-width:520px){.camera-stage{right:12px;top:13px;width:82px;height:65px;opacity:.82}.camera-body{height:39px}.camera-top{left:22px;width:30px;height:14px}.camera-viewfinder{left:32px;width:16px}.camera-lens{left:24px;top:14px;width:34px;height:34px}.camera-lens:after{inset:8px}.camera-flash{width:19px;height:17px}.camera-click-label{font-size:6px;letter-spacing:1.1px}.hero h2{max-width:75%}}
+@media(prefers-reduced-motion:reduce){.camera-stage,.camera-lens,.camera-flash,.camera-flash:after,.camera-click-label{animation:none!important}}
+
+
+/* v13 CINEMATIC CAMERA BODY -> SHUTTER CLICK -> FLASH -> LOGO REVEAL */
+.splash{
+  background:radial-gradient(ellipse at 50% 42%,#25221c 0%,#101114 48%,#07080a 100%)!important;
+  color:#f6f0e3;isolation:isolate;cursor:default;
+}
+.splash:before{width:min(92vw,520px);border:1px solid rgba(211,174,97,.32)!important;box-shadow:0 0 0 16px rgba(211,174,97,.035),0 0 0 38px rgba(211,174,97,.025),inset 0 0 55px rgba(211,174,97,.035)!important;animation:studioHalo 5.4s ease-in-out both!important}
+.splash:after{inset:-15%;background:#fff9e9!important;opacity:0;z-index:8;animation:cameraFlashFull 5.4s ease-in-out both!important}
+.splash-inner{width:min(100%,500px);padding:24px 20px 30px}
+.camera-hero{height:clamp(215px,36vh,300px);width:min(86vw,360px);position:relative;margin:0 auto 13px;display:grid;place-items:center;perspective:900px;animation:cameraEntry 5.4s cubic-bezier(.2,.75,.2,1) both}
+.camera-shadow{position:absolute;width:74%;height:20px;bottom:19px;left:13%;border-radius:50%;background:#000;filter:blur(15px);opacity:.65;animation:shadowPulse 5.4s ease both}
+.camera-body-shell{position:absolute;width:clamp(230px,66vw,300px);height:clamp(130px,37vw,172px);top:50%;left:50%;transform:translate(-50%,-50%);border-radius:25px 28px 24px 24px;background:linear-gradient(145deg,#44413a 0%,#1d1e20 19%,#090a0c 58%,#29251e 100%);border:1px solid #8d7040;box-shadow:inset 0 2px 2px #ffffff28,inset 0 -8px 16px #000b,0 14px 25px #0008,0 0 0 2px #0a0b0d;animation:cameraSnap 5.4s ease both}
+.camera-body-shell:before{content:"";position:absolute;inset:7px;border-radius:20px;border:1px solid #ffffff12;pointer-events:none}
+.camera-top-hump{position:absolute;width:104px;height:33px;top:calc(50% - clamp(65px,18.5vw,86px) - 7px);left:calc(50% - 52px);border-radius:13px 13px 3px 3px;background:linear-gradient(180deg,#3d3c38,#151619 80%);border:1px solid #947443;border-bottom:0;box-shadow:inset 0 2px 2px #fff2}
+.camera-hotshoe{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:43px;height:5px;border-radius:4px;background:#a7874e;box-shadow:0 0 8px #c8a96a55}
+.camera-mark{position:absolute;top:17px;left:18px;font-size:8px;letter-spacing:.19em;color:#d8b873}
+.camera-lens-barrel{position:absolute;width:clamp(138px,40vw,174px);height:clamp(138px,40vw,174px);left:50%;top:50%;transform:translate(-50%,-43%);border-radius:50%;display:grid;place-items:center;background:conic-gradient(from 10deg,#272522,#c2a064,#28221a,#0b0c0e,#b28b4a,#25221c,#6d572f,#171719);padding:8px;box-shadow:0 0 0 3px #090a0b,0 0 0 5px #a8874e,0 0 0 8px #171719,0 0 0 9px #70562c,0 9px 18px #000b}
+.lens-rim{width:100%;height:100%;border-radius:50%;padding:9px;display:grid;place-items:center;background:radial-gradient(circle,#08090b 0 47%,#4b4438 51%,#151619 61%,#b58c46 65%,#2b251b 70%,#090a0c 76%);box-shadow:inset 0 0 14px #000,0 0 10px #000}
+.lens-glass{position:relative;width:100%;height:100%;border-radius:50%;overflow:hidden;border:1px solid #c1a36b;background:radial-gradient(circle at 38% 31%,#8d8064 0%,#36362e 12%,#101319 33%,#050608 57%,#30271b 68%,#0a0b0d 78%);box-shadow:inset 0 0 18px #000,0 0 0 3px #101114}
+.iris-blades{position:absolute;inset:12%;border-radius:50%;background:conic-gradient(from 0deg,#101114 0 12%,#897044 12% 15%,#242321 15% 27%,#a58950 27% 30%,#111216 30% 42%,#8d7448 42% 45%,#242321 45% 57%,#a58950 57% 60%,#111216 60% 72%,#8d7448 72% 75%,#242321 75% 87%,#a58950 87% 90%,#111216 90%);clip-path:polygon(50% 0,83% 13%,100% 50%,86% 84%,50% 100%,14% 84%,0 50%,17% 16%);transform:scale(.92) rotate(0);animation:irisSnap 5.4s cubic-bezier(.25,.8,.25,1) both}
+.lens-glint{position:absolute;z-index:2;left:32%;top:22%;width:24%;height:17%;border-radius:50%;background:linear-gradient(135deg,#fff5cfaa,transparent 70%);filter:blur(2px);transform:rotate(-35deg)}
+.camera-led{position:absolute;right:19px;top:21px;width:6px;height:6px;border-radius:50%;background:#cfa75e;box-shadow:0 0 7px #e8bd68;animation:ledBlink 5.4s ease both}
+.camera-shutter-button{position:absolute;right:25px;top:-5px;width:17px;height:7px;border-radius:4px;background:linear-gradient(#d7b976,#6f5227);box-shadow:0 2px 3px #000}
+.camera-flash-beam{position:absolute;top:50%;left:50%;width:8px;height:8px;border-radius:50%;transform:translate(-50%,-45%);background:#fff7d9;opacity:0;z-index:5;box-shadow:0 0 0 0 #fff,0 0 0 0 #f8d77c;animation:flashCore 5.4s ease both}
+.camera-click-label{position:absolute;bottom:0;left:0;right:0;text-align:center;color:#d4b16b;font-size:9px;letter-spacing:.32em;opacity:0;animation:clickLabel 5.4s ease both}
+.splash-wordmark{font-size:clamp(26px,7vw,38px);letter-spacing:.2em;color:#f7f1e6!important;opacity:0;animation:wordmarkReveal 5.4s ease both!important}
+.splash-wordmark em{font-family:Georgia,serif;font-style:italic;letter-spacing:0;color:#d9b66c}
+.splash-sub{color:#d0ac63!important;opacity:0;animation:copyReveal 5.4s ease both!important}
+.splash-line{background:#35302a!important}.splash-line span{background:linear-gradient(90deg,#8e6429,#fff0c7,#b58b43)!important;animation:loadingLine 3.6s .35s ease forwards!important}
+.splash-caption{color:#a99a7b!important;opacity:0;animation:copyReveal 5.4s ease both!important}
+@keyframes cameraEntry{0%{opacity:0;transform:translateY(26px) scale(.78) rotateX(13deg)}12%{opacity:1;transform:translateY(0) scale(1) rotateX(0)}100%{opacity:1;transform:translateY(0) scale(1) rotateX(0)}}
+@keyframes cameraSnap{0%,29%,35%,100%{transform:translate(-50%,-50%) rotate(0) scale(1)}30%{transform:translate(-50%,-49%) rotate(-1.5deg) scale(.985)}32%{transform:translate(-50%,-51%) rotate(1deg) scale(1.015)}34%{transform:translate(-50%,-50%) rotate(0) scale(1)}}
+@keyframes irisSnap{0%,26%{transform:scale(1) rotate(0);filter:brightness(.8)}31%{transform:scale(.78) rotate(18deg);filter:brightness(1.2)}35%{transform:scale(.24) rotate(65deg);filter:brightness(2)}39%{transform:scale(.07) rotate(100deg);filter:brightness(3)}45%,55%{transform:scale(.08) rotate(110deg);filter:brightness(2.5)}62%{transform:scale(.55) rotate(165deg);filter:brightness(1.5)}73%,100%{transform:scale(1) rotate(225deg);filter:brightness(1)}}
+@keyframes flashCore{0%,35%,56%,100%{opacity:0;transform:translate(-50%,-45%) scale(.1);box-shadow:0 0 0 0 #fff,0 0 0 0 #f8d77c}39%{opacity:1;transform:translate(-50%,-45%) scale(1);box-shadow:0 0 40px 20px #fff,0 0 95px 55px #f8d77c}43%{opacity:.95;transform:translate(-50%,-45%) scale(3);box-shadow:0 0 65px 42px #fff,0 0 130px 80px #f8d77c}}
+@keyframes cameraFlashFull{0%,36%,55%,100%{opacity:0}39%{opacity:.98}42%{opacity:.88}48%{opacity:0}}
+@keyframes wordmarkReveal{0%,48%{opacity:0;transform:translateY(15px);letter-spacing:.42em}62%{opacity:1;transform:translateY(0);letter-spacing:.2em}100%{opacity:1;transform:translateY(0);letter-spacing:.2em}}
+@keyframes copyReveal{0%,57%{opacity:0;transform:translateY(8px)}70%,100%{opacity:1;transform:translateY(0)}}
+@keyframes clickLabel{0%,25%{opacity:0;transform:translateY(5px)}34%,55%{opacity:1;transform:translateY(0)}68%,100%{opacity:0;transform:translateY(-3px)}}
+@keyframes ledBlink{0%,25%,100%{opacity:.4}29%,33%{opacity:1;box-shadow:0 0 12px #f3d58c}}
+@keyframes shadowPulse{0%,100%{transform:scale(.8);opacity:.35}20%,45%{transform:scale(1);opacity:.7}}
+@keyframes studioHalo{0%,100%{transform:scale(.97);opacity:.55}50%{transform:scale(1.02);opacity:.9}}
+@media(max-width:390px){.camera-hero{height:225px}.camera-body-shell{width:235px;height:132px}.camera-lens-barrel{width:139px;height:139px}.camera-top-hump{top:calc(50% - 73px - 7px)}}
+@media(prefers-reduced-motion:reduce){.camera-hero,.camera-body-shell,.iris-blades,.camera-flash-beam,.splash:after,.splash-wordmark,.splash-sub,.splash-caption,.camera-click-label{animation:none!important;opacity:1!important}}
+
+</style>
+</head>
+<body>
+<div class="splash" id="cinematicSplash" aria-label="Clicks by PP camera intro">
+  <div class="splash-grain" aria-hidden="true"></div>
+  <div class="splash-inner">
+    <div class="camera-hero" aria-hidden="true">
+      <div class="camera-shadow"></div>
+      <div class="camera-top-hump"></div>
+      <div class="camera-body-shell">
+        <div class="camera-hotshoe"></div>
+        <div class="camera-mark">CLICKS BY PP</div>
+        <div class="camera-lens-barrel">
+          <div class="lens-rim"><div class="lens-glass"><div class="iris-blades"></div><div class="lens-glint"></div></div></div>
+        </div>
+        <div class="camera-led"></div>
+        <div class="camera-shutter-button"></div>
+      </div>
+      <div class="camera-flash-beam"></div>
+      <div class="camera-click-label">SHUTTER · CLICK</div>
+    </div>
+    <div class="splash-wordmark">CLICKS BY <em>PP</em></div>
+    <div class="splash-sub">PHOTOGRAPHY · VISUAL STORIES</div>
+    <div class="splash-line"><span></span></div>
+    <div class="splash-caption">CAPTURE THE MOMENT</div>
+  </div>
+</div>
+<canvas class="ambient-canvas" id="ambientCanvas" aria-hidden="true"></canvas>
+<div class="wrap">
+<header class="top"><div class="brand"><div class="logo">◉</div><div><h1>CLICKS BY PP</h1><small>STUDIO DESK · FREELANCE</small></div></div><div class="today" id="todayBadge">TODAY</div></header>
+<section class="hero"><div class="camera-stage" aria-hidden="true"><div class="camera-body"></div><div class="camera-top"></div><div class="camera-viewfinder"></div><div class="camera-lens"></div><div class="camera-flash"></div><div class="camera-click-label">CLICK · FLASH</div></div><div class="eyebrow">Your work, in focus</div><h2>A calmer way to run your shoots.</h2><p>Bookings, travel and expenses — clean, quick, all in one place.</p><div class="hero-actions"><button class="btn primary" onclick="openTab('add')">＋ Add booking</button><button class="btn ghost" onclick="openTab('travel')">＋ Travel expense</button></div></section>
+<div class="stats pro-stats"><div class="stat"><span>UPCOMING SHOOTS</span><strong id="statBookings">0</strong><em>Bookings</em></div><div class="stat"><span>TRAVEL SPEND</span><strong id="statTravel">₹0</strong><em>Recorded</em></div><div class="stat"><span>THIS MONTH</span><strong id="statMonth">0</strong><em>Work days</em></div><div class="stat"><span>RECEIVED</span><strong id="statReceived">₹0</strong><em>Advance collected</em></div><div class="stat"><span>BALANCE DUE</span><strong id="statDue">₹0</strong><em>To collect</em></div></div>
+<nav class="tabs"><button class="tab active" data-tab="home" onclick="openTab('home')">Overview</button><button class="tab" data-tab="calendar" onclick="openTab('calendar')">Calendar</button><button class="tab" data-tab="add" onclick="openTab('add')">＋ Booking</button><button class="tab" data-tab="travel" onclick="openTab('travel')">Travel & expense</button><button class="tab" data-tab="records" onclick="openTab('records')">All records</button></nav>
+<section class="section active" id="home"><div class="section-head"><div><h3>Next up</h3><p>Your upcoming client work</p></div><button class="mini" onclick="openTab('records')">View all →</button></div><div id="upcomingList"></div><div class="section-head"><div><h3>Recent travel expenses</h3><p>Keep an eye on travel costs</p></div></div><div id="recentTravel"></div></section>
+<section class="section" id="calendar"><div class="section-head"><div><h3>Schedule</h3><p>See shoots and travel at a glance</p></div></div><div class="card"><div class="monthbar"><button onclick="changeMonth(-1)">‹</button><strong id="monthLabel"></strong><button onclick="changeMonth(1)">›</button></div><div class="calendar" id="calendarGrid"></div><div class="legend"><span>Booking</span><span>Travel</span></div></div><div id="selectedDayList"></div></section>
+<section class="section" id="add"><div class="section-head"><div><h3 id="bookingFormTitle">New booking</h3><p>Only the essentials. Add details later if needed.</p></div></div><div class="notice" id="conflictNotice" style="display:none"></div><form class="card" id="bookingForm"><input type="hidden" id="editId"><div class="formgrid">
+<div class="field full"><label>CLIENT / PROJECT NAME *</label><input id="client" required placeholder="e.g. Mehta Wedding"></div>
+<div class="field"><label>SHOOT FROM · START DATE *</label><input id="startDate" type="date" required></div><div class="field"><label>SHOOT UNTIL · END DATE *</label><input id="endDate" type="date" required></div><div class="field full"><div id="dateRangeHint" class="muted">Choose the first and last shoot dates to see the full booking period.</div></div>
+<div class="field"><label>SHOOT TYPE</label><select id="shootType"><option>Wedding</option><option>Pre-wedding</option><option>Event</option><option>Portrait</option><option>Commercial</option><option>Other</option></select></div>
+<div class="field"><label>LOCATION</label><input id="location" placeholder="Anand / Mumbai"></div>
+<div class="field"><label>TRAVEL COST (₹)</label><input id="travelCost" type="number" min="0" inputmode="decimal" placeholder="0"></div>
+<div class="field"><label>TRAVEL PAID BY</label><select id="travelPaidBy"><option value="Client">Client</option><option value="Me">Me</option><option value="Shared">Shared</option><option value="Not paid">Not paid yet</option></select></div>
+<div class="field"><label>TOTAL PACKAGE (₹)</label><input id="packagePrice" type="number" min="0" inputmode="decimal" placeholder="0"></div><div class="field"><label>ADVANCE RECEIVED (₹)</label><input id="advancePaid" type="number" min="0" inputmode="decimal" placeholder="0"></div><div class="field"><label>BOOKING STATUS</label><select id="status"><option>Confirmed</option><option>Pending</option><option>Completed</option></select></div>
+<div class="field"><label>BOOKED / ADDED BY</label><select id="addedBy"><option value="Client">Client paid / arranged</option><option value="Me">I paid / arranged</option><option value="Both">Both</option><option value="Not applicable">Not applicable</option></select></div>
+<div class="field full"><label>NOTES (OPTIONAL)</label><textarea id="notes" placeholder="Short note, timing, contact…"></textarea></div></div><div class="form-actions"><button class="btn primary" type="submit">Save booking</button><button class="btn" type="button" onclick="resetBookingForm()">Clear</button></div></form></section>
+<section class="section" id="travel"><div class="section-head"><div><h3>Travel & expenses</h3><p>Record what you spent, and who covered it.</p></div></div><form class="card" id="travelForm"><input type="hidden" id="travelEditId"><div class="formgrid">
+<div class="field full"><label>TRIP / PURPOSE *</label><input id="tripName" required placeholder="e.g. Anand → Mumbai shoot"></div>
+<div class="field"><label>DATE *</label><input id="tripDate" type="date" required></div><div class="field"><label>AMOUNT (₹) *</label><input id="tripAmount" type="number" min="0" inputmode="decimal" required placeholder="0"></div>
+<div class="field"><label>PAID BY</label><select id="tripPaidBy"><option value="Me">Me</option><option value="Client">Client</option><option value="Shared">Shared</option><option value="Not paid">Not paid yet</option></select></div>
+<div class="field"><label>CATEGORY</label><select id="tripCategory"><option>Fuel</option><option>Train / Bus</option><option>Flight</option><option>Taxi / Auto</option><option>Hotel</option><option>Food</option><option>Parking / Toll</option><option>Other</option></select></div>
+<div class="field full"><label>ROUTE (OPTIONAL)</label><input id="tripRoute" placeholder="Anand → Mumbai"></div>
+<div class="field full"><label>NOTE (OPTIONAL)</label><input id="tripNote" placeholder="Receipt, client reimbursement…"></div></div><div class="form-actions"><button class="btn primary" type="submit">Save expense</button><button class="btn" type="button" onclick="resetTravelForm()">Clear</button></div></form><div class="section-head"><div><h3>Expense log</h3><p>All recorded travel spending</p></div></div><div id="travelList"></div></section>
+<section class="section" id="records"><div class="section-head"><div><h3>All bookings</h3><p>Manage your freelance calendar</p></div><button class="mini" onclick="exportData()">Export backup</button></div><div class="history-label">BOOKING HISTORY</div>
+<div class="history-tools">
+  <input id="historySearch" type="search" placeholder="Search client or location…" oninput="renderHistory()" aria-label="Search booking history">
+  <select id="historyFilter" onchange="renderHistory()" aria-label="Filter booking history">
+    <option value="all">All bookings</option><option value="upcoming">Upcoming</option><option value="completed">Completed</option>
+  </select>
+</div>
+<div id="historyCount" class="muted" style="font-size:12px;margin:0 0 12px"></div>
+<div id="allBookings"></div><div class="card"><h3 style="font-size:14px;margin-top:0">Backup & restore</h3><p class="muted">Your records stay in this browser on this iPhone. Export a backup regularly. Cloud sync is not enabled yet.</p><div class="row"><button class="btn" onclick="exportData()">Export JSON</button><label class="btn" for="importFile">Restore backup</label><input id="importFile" type="file" accept=".json,application/json" style="display:none" onchange="importData(event)"></div></div></section>
+<div class="foot">CLICKS BY PP · PRIVATE WORKSPACE · MADE FOR THE MOMENT</div>
+</div>
+<div class="alert-backdrop" id="dateAlert" role="dialog" aria-modal="true" aria-labelledby="dateAlertTitle"><div class="date-alert"><div class="alert-icon">✦</div><div class="alert-date" id="dateAlertLabel">UPCOMING SHOOT</div><h3 id="dateAlertTitle">Your next shoot is coming up</h3><p id="dateAlertBody"></p><div class="row" style="justify-content:center"><button class="btn primary" onclick="dismissDateAlert(true)">View booking</button><button class="btn" onclick="dismissDateAlert(false)">Later</button></div></div></div>
+<script>
+const KEY='clicksbypp_studio_desk_v4';
+// Cinematic intro and lightweight ambient particles (optimized for phones)
+window.addEventListener('load',()=>{const splash=document.getElementById('cinematicSplash');setTimeout(()=>splash&&splash.classList.add('hide'),5600);});
+(()=>{const c=document.getElementById('ambientCanvas');if(!c)return;const ctx=c.getContext('2d');let w=0,h=0,dots=[];function resize(){w=c.width=Math.floor(innerWidth*(devicePixelRatio||1));h=c.height=Math.floor(innerHeight*(devicePixelRatio||1));c.style.width=innerWidth+'px';c.style.height=innerHeight+'px';ctx.setTransform(devicePixelRatio||1,0,0,devicePixelRatio||1,0,0);dots=Array.from({length:Math.min(34,Math.max(14,Math.floor(innerWidth/13)))},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.5+.35,v:Math.random()*.22+.06,a:Math.random()*.32+.06,p:Math.random()*6.28}));}function draw(){ctx.clearRect(0,0,innerWidth,innerHeight);for(const d of dots){d.y-=d.v;d.p+=.012;if(d.y< -4){d.y=innerHeight+4;d.x=Math.random()*innerWidth;}ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fillStyle='rgba(221,190,126,'+(d.a*(.7+.3*Math.sin(d.p)))+')';ctx.fill();}requestAnimationFrame(draw)}resize();addEventListener('resize',resize,{passive:true});draw();})();
+let data={bookings:[],travel:[]}, viewDate=new Date(), selectedDate=null;
+try{const saved=JSON.parse(localStorage.getItem(KEY)||'{}');data.bookings=saved.bookings||[];data.travel=saved.travel||[]}catch(e){}
+const $=id=>document.getElementById(id);
+const fmtDate=d=>d?new Date(d+'T12:00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'}):'—';
+const inr=n=>'₹'+Number(n||0).toLocaleString('en-IN',{maximumFractionDigits:0});
+const todayISO=()=>{let d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
+function save(){localStorage.setItem(KEY,JSON.stringify(data));render();renderHistory()}
+function openTab(id){document.querySelectorAll('.section').forEach(s=>s.classList.toggle('active',s.id===id));document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.tab===id));if(id==='calendar')renderCalendar();window.scrollTo({top:0,behavior:'smooth'})}
+function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function daysUntil(iso){if(!iso)return 99999;return Math.round((new Date(iso+'T12:00:00')-new Date(todayISO()+'T12:00:00'))/86400000)}
+function countdownLabel(iso){let n=daysUntil(iso);return n===0?'✦ TODAY':n===1?'✦ TOMORROW':n>1?'✦ IN '+n+' DAYS':'PAST'}
+function bookingCard(b){let autoCompleted=(b.endDate||b.startDate)<todayISO();let displayStatus=autoCompleted?'Completed':(b.status||'Confirmed');let days=daysUntil(b.startDate);let isSoon=!autoCompleted&&days>=0&&days<=7&&b.status!=='Completed';let price=Number(b.packagePrice||0),advance=Number(b.advancePaid||0),due=Math.max(0,price-advance);return `<div class="card ${isSoon?'upcoming-pulse':''}"><div class="booking-title"><div><h4>${esc(b.client)}</h4><div class="muted">${esc(b.shootType||'Shoot')} · ${esc(b.location||'Location not added')}</div>${isSoon?`<div style="margin-top:9px"><span class="countdown-pill">${countdownLabel(b.startDate)}</span></div>`:''}</div><span class="pill ${autoCompleted?'completed-pill':''}">${esc(displayStatus)}</span></div><div class="detailgrid"><div class="detail"><small>SHOOT PERIOD</small><b>${fmtDate(b.startDate)}${b.endDate&&b.endDate!==b.startDate?' → '+fmtDate(b.endDate):' · 1 day'}</b></div><div class="detail"><small>TRAVEL COST</small><b class="money">${inr(b.travelCost)}</b></div><div class="detail"><small>PACKAGE TOTAL</small><b>${inr(price)}</b></div><div class="detail"><small>ADVANCE RECEIVED</small><b>${inr(advance)}</b></div><div class="detail"><small>BALANCE DUE</small><b class="money">${inr(due)}</b></div><div class="detail"><small>TRAVEL PAID BY</small><b>${esc(b.travelPaidBy||'Not set')}</b></div></div>${b.notes?`<p class="muted" style="margin:12px 0 0">${esc(b.notes)}</p>`:''}<div class="row"><button class="mini" onclick="editBooking('${b.id}')">Edit</button><button class="mini" onclick="makeInvoice('${b.id}')">Invoice / Quote</button><button class="mini" onclick="deleteBooking('${b.id}')">Delete</button></div></div>`}
+function travelCard(t){return `<div class="card"><div class="booking-title"><div><h4>${esc(t.tripName)}</h4><div class="muted">${fmtDate(t.tripDate)} · ${esc(t.tripCategory||'Other')}</div></div><div class="money">${inr(t.tripAmount)}</div></div><div class="detailgrid"><div class="detail"><small>ROUTE</small><b>${esc(t.tripRoute||'—')}</b></div><div class="detail"><small>PAID BY</small><b>${esc(t.tripPaidBy||'Me')}</b></div></div>${t.tripNote?`<p class="muted">${esc(t.tripNote)}</p>`:''}<div class="row"><button class="mini" onclick="editTravel('${t.id}')">Edit</button><button class="mini" onclick="deleteTravel('${t.id}')">Delete</button></div></div>`}
+function render(){let today=todayISO(),month=today.slice(0,7);$('todayBadge').textContent=new Date().toLocaleDateString('en-IN',{day:'numeric',month:'short'}).toUpperCase();let upcoming=data.bookings.filter(b=>b.startDate>=today&&b.status!=='Completed').sort((a,b)=>a.startDate.localeCompare(b.startDate));$('statBookings').textContent=upcoming.length;$('statTravel').textContent=inr(data.travel.reduce((s,t)=>s+Number(t.tripAmount||0),0));$('statMonth').textContent=data.bookings.filter(b=>b.startDate&&b.startDate.startsWith(month)).length;$('statReceived').textContent=inr(data.bookings.reduce((s,b)=>s+Number(b.advancePaid||0),0));$('statDue').textContent=inr(data.bookings.reduce((s,b)=>s+Math.max(0,Number(b.packagePrice||0)-Number(b.advancePaid||0)),0));$('upcomingList').innerHTML=upcoming.length?upcoming.slice(0,3).map(bookingCard).join(''):'<div class="card empty">No upcoming shoots yet.<br>Add a booking to get started.</div>';let recent=[...data.travel].sort((a,b)=>b.tripDate.localeCompare(a.tripDate)).slice(0,2);$('recentTravel').innerHTML=recent.length?recent.map(travelCard).join(''):'<div class="card empty">No travel expenses recorded yet.</div>';renderHistory();$('travelList').innerHTML=data.travel.length?[...data.travel].sort((a,b)=>b.tripDate.localeCompare(a.tripDate)).map(travelCard).join(''):'<div class="card empty">No expenses yet. Add your first trip above.</div>';renderCalendar()}
+
+function renderHistory(){
+ const list=$('allBookings'); if(!list)return;
+ const query=($('historySearch')?.value||'').trim().toLowerCase();
+ const filter=$('historyFilter')?.value||'all'; const today=todayISO();
+ let rows=[...data.bookings].filter(b=>{
+   const completed=(b.endDate||b.startDate)<today;
+   const matchesFilter=filter==='all'||(filter==='completed'&&completed)||(filter==='upcoming'&&!completed);
+   const hay=[b.client,b.location,b.shootType,b.notes].join(' ').toLowerCase();
+   return matchesFilter&&hay.includes(query);
+ }).sort((a,b)=>(b.startDate||'').localeCompare(a.startDate||''));
+ $('historyCount').textContent=rows.length+' record'+(rows.length===1?'':'s')+(filter==='completed'?' · completed':filter==='upcoming'?' · upcoming':'');
+ list.innerHTML=rows.length?rows.map(bookingCard).join(''):'<div class="card empty">No matching bookings found.</div>';
+}
+function showToast(message){
+ const el=$('successToast');if(!el)return;el.textContent=message;el.classList.add('show');
+ clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>el.classList.remove('show'),2300);
+}
+
+function makeInvoice(id){let b=data.bookings.find(x=>x.id===id);if(!b)return;let price=Number(b.packagePrice||0),advance=Number(b.advancePaid||0),due=Math.max(0,price-advance);let w=window.open('','_blank');if(!w){alert('Please allow pop-ups for invoice preview, then try again.');return}w.document.write(`<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Clicks by PP · Quote</title><style>body{font-family:Arial,sans-serif;color:#222;max-width:760px;margin:30px auto;padding:25px}header{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid #b99a5b;padding-bottom:18px}h1{font-size:24px;margin:0}small{color:#777;letter-spacing:2px}h2{margin-top:35px}table{width:100%;border-collapse:collapse;margin-top:22px}td,th{text-align:left;padding:13px;border-bottom:1px solid #ddd}th{background:#f5f1e8}.total{font-size:20px;font-weight:bold;text-align:right;margin-top:20px}.note{margin-top:50px;color:#777;font-size:12px}@media print{button{display:none}body{margin:0}}
+/* PRO v8 — calmer luxury, cleaner mobile layout, clearer next-shoot focus */
+:root{--gold:#cfb276;--gold2:#f0ddb0;--panel:#121419;--line:#292c34}
+.wrap{max-width:720px;padding:16px 16px calc(105px + env(safe-area-inset-bottom))}
+.top{padding-bottom:18px}
+.hero{padding:25px 22px 22px;border-radius:25px;margin-bottom:16px}
+.hero h2{font-size:clamp(26px,6.4vw,32px);line-height:1.12;max-width:360px}
+.hero p{font-size:13px;max-width:370px}
+.hero-actions{gap:10px;flex-wrap:wrap}
+.btn{min-height:44px;padding:12px 15px;border-radius:13px;font-size:13px}
+.stats.pro-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:15px 0 17px}
+.stat{min-height:104px;padding:15px 14px;border-radius:17px}
+.stat span{font-size:10px;letter-spacing:.04em;line-height:1.5;display:block}
+.stat strong{font-size:22px;margin-top:9px;overflow-wrap:anywhere}
+.stat em{display:block;font-size:11px;line-height:1.5;margin-top:4px}
+.tabs{position:sticky;top:0;z-index:50;gap:6px;margin:0 -2px 15px;padding:8px 2px 10px;background:rgba(11,12,15,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(207,178,118,.10);scroll-snap-type:x proximity}
+.tab{padding:11px 14px;font-size:12px;scroll-snap-align:start}
+.section-head{margin:12px 2px 13px}
+.section-head h3{font-size:18px;letter-spacing:-.02em}
+.section-head p{font-size:12px;line-height:1.5}
+.card{border-radius:18px;padding:16px;margin-bottom:12px}
+.booking-title h4{font-size:16px}
+.detail{padding:11px;border:1px solid rgba(255,255,255,.025)}
+.detail b{line-height:1.5;overflow-wrap:anywhere}
+.upcoming-pulse{border-color:rgba(240,221,176,.78)!important;box-shadow:0 0 0 1px rgba(240,221,176,.12),0 8px 30px rgba(200,169,106,.10);animation:upcomingPop 2.2s ease-in-out infinite}
+.countdown-pill{padding:7px 10px;font-size:11px;font-weight:650;box-shadow:0 0 18px rgba(200,169,106,.10)}
+.date-alert{padding:27px 22px;border-radius:26px;box-shadow:0 24px 90px #000c,0 0 45px rgba(200,169,106,.12)}
+.date-alert .alert-icon{width:58px;height:58px;margin:0 auto 16px;border:1px solid rgba(240,221,176,.45);border-radius:20px;display:grid;place-items:center;background:linear-gradient(145deg,#342a18,#15151a);color:#f0ddb0;font-size:27px;box-shadow:0 0 26px rgba(200,169,106,.12)}
+.date-alert .alert-date{font-size:11px;font-weight:700;letter-spacing:.18em}
+.date-alert h3{font-size:23px;line-height:1.2;margin:10px 0;color:#f7e8c4}
+.date-alert p{font-size:14px;line-height:1.65}
+.date-alert .row{gap:10px}
+.date-alert .btn{flex:1}
+@keyframes upcomingPop{0%,100%{transform:scale(1);box-shadow:0 0 0 1px rgba(240,221,176,.10),0 7px 24px rgba(200,169,106,.08)}50%{transform:scale(1.006);box-shadow:0 0 0 2px rgba(240,221,176,.22),0 10px 32px rgba(200,169,106,.20)}}
+@media(min-width:560px){.stats.pro-stats{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:380px){.wrap{padding-left:12px;padding-right:12px}.hero{padding:21px 17px}.hero-actions .btn{flex:1}.stat{padding:13px 11px}.stat strong{font-size:20px}.detailgrid{gap:7px}.tab{padding:10px 12px}}
+@media(prefers-reduced-motion:reduce){.upcoming-pulse{transform:none!important}}
+
+
+/* v13 CINEMATIC CAMERA BODY -> SHUTTER CLICK -> FLASH -> LOGO REVEAL */
+.splash{
+  background:radial-gradient(ellipse at 50% 42%,#25221c 0%,#101114 48%,#07080a 100%)!important;
+  color:#f6f0e3;isolation:isolate;cursor:default;
+}
+.splash:before{width:min(92vw,520px);border:1px solid rgba(211,174,97,.32)!important;box-shadow:0 0 0 16px rgba(211,174,97,.035),0 0 0 38px rgba(211,174,97,.025),inset 0 0 55px rgba(211,174,97,.035)!important;animation:studioHalo 5.4s ease-in-out both!important}
+.splash:after{inset:-15%;background:#fff9e9!important;opacity:0;z-index:8;animation:cameraFlashFull 5.4s ease-in-out both!important}
+.splash-inner{width:min(100%,500px);padding:24px 20px 30px}
+.camera-hero{height:clamp(215px,36vh,300px);width:min(86vw,360px);position:relative;margin:0 auto 13px;display:grid;place-items:center;perspective:900px;animation:cameraEntry 5.4s cubic-bezier(.2,.75,.2,1) both}
+.camera-shadow{position:absolute;width:74%;height:20px;bottom:19px;left:13%;border-radius:50%;background:#000;filter:blur(15px);opacity:.65;animation:shadowPulse 5.4s ease both}
+.camera-body-shell{position:absolute;width:clamp(230px,66vw,300px);height:clamp(130px,37vw,172px);top:50%;left:50%;transform:translate(-50%,-50%);border-radius:25px 28px 24px 24px;background:linear-gradient(145deg,#44413a 0%,#1d1e20 19%,#090a0c 58%,#29251e 100%);border:1px solid #8d7040;box-shadow:inset 0 2px 2px #ffffff28,inset 0 -8px 16px #000b,0 14px 25px #0008,0 0 0 2px #0a0b0d;animation:cameraSnap 5.4s ease both}
+.camera-body-shell:before{content:"";position:absolute;inset:7px;border-radius:20px;border:1px solid #ffffff12;pointer-events:none}
+.camera-top-hump{position:absolute;width:104px;height:33px;top:calc(50% - clamp(65px,18.5vw,86px) - 7px);left:calc(50% - 52px);border-radius:13px 13px 3px 3px;background:linear-gradient(180deg,#3d3c38,#151619 80%);border:1px solid #947443;border-bottom:0;box-shadow:inset 0 2px 2px #fff2}
+.camera-hotshoe{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:43px;height:5px;border-radius:4px;background:#a7874e;box-shadow:0 0 8px #c8a96a55}
+.camera-mark{position:absolute;top:17px;left:18px;font-size:8px;letter-spacing:.19em;color:#d8b873}
+.camera-lens-barrel{position:absolute;width:clamp(138px,40vw,174px);height:clamp(138px,40vw,174px);left:50%;top:50%;transform:translate(-50%,-43%);border-radius:50%;display:grid;place-items:center;background:conic-gradient(from 10deg,#272522,#c2a064,#28221a,#0b0c0e,#b28b4a,#25221c,#6d572f,#171719);padding:8px;box-shadow:0 0 0 3px #090a0b,0 0 0 5px #a8874e,0 0 0 8px #171719,0 0 0 9px #70562c,0 9px 18px #000b}
+.lens-rim{width:100%;height:100%;border-radius:50%;padding:9px;display:grid;place-items:center;background:radial-gradient(circle,#08090b 0 47%,#4b4438 51%,#151619 61%,#b58c46 65%,#2b251b 70%,#090a0c 76%);box-shadow:inset 0 0 14px #000,0 0 10px #000}
+.lens-glass{position:relative;width:100%;height:100%;border-radius:50%;overflow:hidden;border:1px solid #c1a36b;background:radial-gradient(circle at 38% 31%,#8d8064 0%,#36362e 12%,#101319 33%,#050608 57%,#30271b 68%,#0a0b0d 78%);box-shadow:inset 0 0 18px #000,0 0 0 3px #101114}
+.iris-blades{position:absolute;inset:12%;border-radius:50%;background:conic-gradient(from 0deg,#101114 0 12%,#897044 12% 15%,#242321 15% 27%,#a58950 27% 30%,#111216 30% 42%,#8d7448 42% 45%,#242321 45% 57%,#a58950 57% 60%,#111216 60% 72%,#8d7448 72% 75%,#242321 75% 87%,#a58950 87% 90%,#111216 90%);clip-path:polygon(50% 0,83% 13%,100% 50%,86% 84%,50% 100%,14% 84%,0 50%,17% 16%);transform:scale(.92) rotate(0);animation:irisSnap 5.4s cubic-bezier(.25,.8,.25,1) both}
+.lens-glint{position:absolute;z-index:2;left:32%;top:22%;width:24%;height:17%;border-radius:50%;background:linear-gradient(135deg,#fff5cfaa,transparent 70%);filter:blur(2px);transform:rotate(-35deg)}
+.camera-led{position:absolute;right:19px;top:21px;width:6px;height:6px;border-radius:50%;background:#cfa75e;box-shadow:0 0 7px #e8bd68;animation:ledBlink 5.4s ease both}
+.camera-shutter-button{position:absolute;right:25px;top:-5px;width:17px;height:7px;border-radius:4px;background:linear-gradient(#d7b976,#6f5227);box-shadow:0 2px 3px #000}
+.camera-flash-beam{position:absolute;top:50%;left:50%;width:8px;height:8px;border-radius:50%;transform:translate(-50%,-45%);background:#fff7d9;opacity:0;z-index:5;box-shadow:0 0 0 0 #fff,0 0 0 0 #f8d77c;animation:flashCore 5.4s ease both}
+.camera-click-label{position:absolute;bottom:0;left:0;right:0;text-align:center;color:#d4b16b;font-size:9px;letter-spacing:.32em;opacity:0;animation:clickLabel 5.4s ease both}
+.splash-wordmark{font-size:clamp(26px,7vw,38px);letter-spacing:.2em;color:#f7f1e6!important;opacity:0;animation:wordmarkReveal 5.4s ease both!important}
+.splash-wordmark em{font-family:Georgia,serif;font-style:italic;letter-spacing:0;color:#d9b66c}
+.splash-sub{color:#d0ac63!important;opacity:0;animation:copyReveal 5.4s ease both!important}
+.splash-line{background:#35302a!important}.splash-line span{background:linear-gradient(90deg,#8e6429,#fff0c7,#b58b43)!important;animation:loadingLine 3.6s .35s ease forwards!important}
+.splash-caption{color:#a99a7b!important;opacity:0;animation:copyReveal 5.4s ease both!important}
+@keyframes cameraEntry{0%{opacity:0;transform:translateY(26px) scale(.78) rotateX(13deg)}12%{opacity:1;transform:translateY(0) scale(1) rotateX(0)}100%{opacity:1;transform:translateY(0) scale(1) rotateX(0)}}
+@keyframes cameraSnap{0%,29%,35%,100%{transform:translate(-50%,-50%) rotate(0) scale(1)}30%{transform:translate(-50%,-49%) rotate(-1.5deg) scale(.985)}32%{transform:translate(-50%,-51%) rotate(1deg) scale(1.015)}34%{transform:translate(-50%,-50%) rotate(0) scale(1)}}
+@keyframes irisSnap{0%,26%{transform:scale(1) rotate(0);filter:brightness(.8)}31%{transform:scale(.78) rotate(18deg);filter:brightness(1.2)}35%{transform:scale(.24) rotate(65deg);filter:brightness(2)}39%{transform:scale(.07) rotate(100deg);filter:brightness(3)}45%,55%{transform:scale(.08) rotate(110deg);filter:brightness(2.5)}62%{transform:scale(.55) rotate(165deg);filter:brightness(1.5)}73%,100%{transform:scale(1) rotate(225deg);filter:brightness(1)}}
+@keyframes flashCore{0%,35%,56%,100%{opacity:0;transform:translate(-50%,-45%) scale(.1);box-shadow:0 0 0 0 #fff,0 0 0 0 #f8d77c}39%{opacity:1;transform:translate(-50%,-45%) scale(1);box-shadow:0 0 40px 20px #fff,0 0 95px 55px #f8d77c}43%{opacity:.95;transform:translate(-50%,-45%) scale(3);box-shadow:0 0 65px 42px #fff,0 0 130px 80px #f8d77c}}
+@keyframes cameraFlashFull{0%,36%,55%,100%{opacity:0}39%{opacity:.98}42%{opacity:.88}48%{opacity:0}}
+@keyframes wordmarkReveal{0%,48%{opacity:0;transform:translateY(15px);letter-spacing:.42em}62%{opacity:1;transform:translateY(0);letter-spacing:.2em}100%{opacity:1;transform:translateY(0);letter-spacing:.2em}}
+@keyframes copyReveal{0%,57%{opacity:0;transform:translateY(8px)}70%,100%{opacity:1;transform:translateY(0)}}
+@keyframes clickLabel{0%,25%{opacity:0;transform:translateY(5px)}34%,55%{opacity:1;transform:translateY(0)}68%,100%{opacity:0;transform:translateY(-3px)}}
+@keyframes ledBlink{0%,25%,100%{opacity:.4}29%,33%{opacity:1;box-shadow:0 0 12px #f3d58c}}
+@keyframes shadowPulse{0%,100%{transform:scale(.8);opacity:.35}20%,45%{transform:scale(1);opacity:.7}}
+@keyframes studioHalo{0%,100%{transform:scale(.97);opacity:.55}50%{transform:scale(1.02);opacity:.9}}
+@media(max-width:390px){.camera-hero{height:225px}.camera-body-shell{width:235px;height:132px}.camera-lens-barrel{width:139px;height:139px}.camera-top-hump{top:calc(50% - 73px - 7px)}}
+@media(prefers-reduced-motion:reduce){.camera-hero,.camera-body-shell,.iris-blades,.camera-flash-beam,.splash:after,.splash-wordmark,.splash-sub,.splash-caption,.camera-click-label{animation:none!important;opacity:1!important}}
+
+</style></head><body><header><div><h1>CLICKS BY PP</h1><small>PHOTOGRAPHY · VISUAL STORIES</small></div><div><b>QUOTATION / INVOICE</b><br><small>${new Date().toLocaleDateString('en-IN')}</small></div></header><h2>${esc(b.client)}</h2><p>${esc(b.shootType||'Photography')} · ${esc(b.location||'Location not specified')}</p><p><b>Event date:</b> ${esc(fmtDate(b.startDate))}${b.endDate&&b.endDate!==b.startDate?' – '+esc(fmtDate(b.endDate)):''}</p><table><tr><th>Description</th><th>Amount</th></tr><tr><td>${esc(b.shootType||'Photography package')}</td><td>${inr(price)}</td></tr><tr><td>Advance received</td><td>− ${inr(advance)}</td></tr><tr><td>Balance payable</td><td>${inr(due)}</td></tr></table><div class="total">Package total: ${inr(price)}</div><p class="note">Thank you for choosing Clicks by PP. This document was generated from your Studio Desk records. Please print or save as PDF.</p><button onclick="window.print()">Print / Save PDF</button></body></html>`);w.document.close()}
+function showUpcomingAlert(){let today=todayISO();let next=data.bookings.filter(b=>b.startDate>=today&&b.status!=='Completed').sort((a,b)=>a.startDate.localeCompare(b.startDate))[0];if(!next)return;let n=daysUntil(next.startDate);if(n<0||n>3)return;let stamp='clicksbypp_date_alert_'+next.id+'_'+today;if(sessionStorage.getItem(stamp))return;$('dateAlertLabel').textContent=n===0?'SHOOT DAY':n===1?'TOMORROW':'IN '+n+' DAYS';$('dateAlertTitle').textContent=next.client+' is coming up';$('dateAlertBody').textContent=(next.shootType||'Shoot')+' · '+fmtDate(next.startDate)+(next.location?' · '+next.location:'')+'. Keep your gear and schedule ready.';window.__alertBookingId=next.id;$('dateAlert').classList.add('show');sessionStorage.setItem(stamp,'1')}
+function dismissDateAlert(view){$('dateAlert').classList.remove('show');if(view&&window.__alertBookingId){openTab('records');setTimeout(()=>{let card=[...document.querySelectorAll('#allBookings .card')].find(el=>el.textContent.includes(data.bookings.find(b=>b.id===window.__alertBookingId)?.client||'###'));card?.scrollIntoView({behavior:'smooth',block:'center'})},250)}}
+function overlaps(a,b){let ae=a.endDate||a.startDate,be=b.endDate||b.startDate;return a.startDate<=be&&b.startDate<=ae}
+function resetBookingForm(){$('bookingForm').reset();$('editId').value='';$('bookingFormTitle').textContent='New booking';$('conflictNotice').style.display='none';$('startDate').value=todayISO();$('endDate').value=todayISO();updateRangeHint()}
+$('bookingForm').addEventListener('submit',e=>{e.preventDefault();let id=$('editId').value||String(Date.now());if(!$('endDate').value){$('endDate').value=$('startDate').value}if($('endDate').value<$('startDate').value){alert('End date cannot be before start date.');return}let b={id,client:$('client').value.trim(),startDate:$('startDate').value,endDate:$('endDate').value,shootType:$('shootType').value,location:$('location').value.trim(),travelCost:Number($('travelCost').value||0),travelPaidBy:$('travelPaidBy').value,packagePrice:Number($('packagePrice').value||0),advancePaid:Number($('advancePaid').value||0),status:$('status').value,addedBy:$('addedBy').value,notes:$('notes').value.trim()};let conflicts=data.bookings.filter(x=>x.id!==id&&overlaps(x,b)&&x.status!=='Completed');if(conflicts.length&&!window.confirm('Date conflict with: '+conflicts.map(x=>x.client).join(', ')+'. Save anyway?'))return;let idx=data.bookings.findIndex(x=>x.id===id);if(idx>=0)data.bookings[idx]=b;else data.bookings.push(b);save();resetBookingForm();openTab('home')});
+function editBooking(id){let b=data.bookings.find(x=>x.id===id);if(!b)return;openTab('add');$('editId').value=b.id;$('client').value=b.client;$('startDate').value=b.startDate;$('endDate').value=b.endDate||b.startDate;updateRangeHint();$('shootType').value=b.shootType||'Wedding';$('location').value=b.location||'';$('travelCost').value=b.travelCost||'';$('travelPaidBy').value=b.travelPaidBy||'Client';$('packagePrice').value=b.packagePrice||'';$('advancePaid').value=b.advancePaid||'';$('status').value=b.status||'Confirmed';$('addedBy').value=b.addedBy||'Client';$('notes').value=b.notes||'';$('bookingFormTitle').textContent='Edit booking'}
+function deleteBooking(id){if(confirm('Delete this booking?')){data.bookings=data.bookings.filter(b=>b.id!==id);save()}}
+function resetTravelForm(){$('travelForm').reset();$('travelEditId').value='';$('tripDate').value=todayISO()}
+$('travelForm').addEventListener('submit',e=>{e.preventDefault();let id=$('travelEditId').value||String(Date.now()),t={id,tripName:$('tripName').value.trim(),tripDate:$('tripDate').value,tripAmount:Number($('tripAmount').value||0),tripPaidBy:$('tripPaidBy').value,tripCategory:$('tripCategory').value,tripRoute:$('tripRoute').value.trim(),tripNote:$('tripNote').value.trim()};let idx=data.travel.findIndex(x=>x.id===id);if(idx>=0)data.travel[idx]=t;else data.travel.push(t);save();resetTravelForm()});
+function editTravel(id){let t=data.travel.find(x=>x.id===id);if(!t)return;openTab('travel');$('travelEditId').value=t.id;$('tripName').value=t.tripName;$('tripDate').value=t.tripDate;$('tripAmount').value=t.tripAmount;$('tripPaidBy').value=t.tripPaidBy||'Me';$('tripCategory').value=t.tripCategory||'Other';$('tripRoute').value=t.tripRoute||'';$('tripNote').value=t.tripNote||''}
+function deleteTravel(id){if(confirm('Delete this expense?')){data.travel=data.travel.filter(t=>t.id!==id);save()}}
+function changeMonth(n){viewDate.setMonth(viewDate.getMonth()+n);renderCalendar()}
+function renderCalendar(){let y=viewDate.getFullYear(),m=viewDate.getMonth();$('monthLabel').textContent=viewDate.toLocaleDateString('en-IN',{month:'long',year:'numeric'});let first=new Date(y,m,1).getDay(),days=new Date(y,m+1,0).getDate(),html=['S','M','T','W','T','F','S'].map(d=>`<div class="dayname">${d}</div>`).join('');for(let i=0;i<first;i++)html+='<div class="day blank"></div>';for(let d=1;d<=days;d++){let iso=y+'-'+String(m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0'),isToday=iso===todayISO(),booked=data.bookings.some(b=>iso>=(b.startDate||'')&&iso<=(b.endDate||b.startDate||'')),travel=data.travel.some(t=>t.tripDate===iso);html+=`<button class="day ${isToday?'today':''} ${booked?'booked':''} ${travel?'travel':''}" onclick="showDay('${iso}')">${d}</button>`}$('calendarGrid').innerHTML=html;if(!selectedDate)selectedDate=todayISO();showDay(selectedDate)}
+function showDay(iso){selectedDate=iso;let b=data.bookings.filter(x=>iso>=x.startDate&&iso<=(x.endDate||x.startDate)),t=data.travel.filter(x=>x.tripDate===iso);$('selectedDayList').innerHTML=`<div class="section-head"><div><h3>${fmtDate(iso)}</h3><p>Schedule for selected day</p></div></div>`+(b.length?b.map(bookingCard).join(''):'')+(t.length?t.map(travelCard).join(''):'')+(!b.length&&!t.length?'<div class="card empty">Nothing scheduled for this day.</div>':'')}
+function exportData(){let blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='clicksbypp-studio-backup.json';a.click();URL.revokeObjectURL(url)}
+function importData(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let d=JSON.parse(r.result);if(!Array.isArray(d.bookings)||!Array.isArray(d.travel))throw 0;if(confirm('Restore backup? Current records will be replaced.')){data=d;save();alert('Backup restored.')}}catch(err){alert('This backup file is not valid.')}e.target.value=''};r.readAsText(f)}
+$('startDate').value=todayISO();$('endDate').value=todayISO();$('tripDate').value=todayISO();
+function updateRangeHint(){let a=$('startDate').value,z=$('endDate').value;if(!a){$('dateRangeHint').textContent='Choose the first and last shoot dates to see the full booking period.';return}if(!z){$('dateRangeHint').textContent='Choose the last shoot date.';return}if(z<a){$('dateRangeHint').textContent='End date must be on or after the start date.';return}let days=Math.round((new Date(z+'T12:00:00')-new Date(a+'T12:00:00'))/86400000)+1;$('dateRangeHint').textContent='Booking period: '+fmtDate(a)+' → '+fmtDate(z)+' · '+days+' day'+(days===1?'':'s')}
+$('startDate').addEventListener('change',()=>{if(!$('endDate').value||$('endDate').value<$('startDate').value)$('endDate').value=$('startDate').value;updateRangeHint()});$('endDate').addEventListener('change',updateRangeHint);updateRangeHint();render();setTimeout(showUpcomingAlert,1200);
+</script><div id="successToast" class="success-toast" role="status" aria-live="polite"></div>
+</body></html>
