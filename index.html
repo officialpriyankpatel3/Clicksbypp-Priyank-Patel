@@ -281,8 +281,8 @@ const KEY='clicksbypp_studio_desk_v4';
 // Cinematic intro and lightweight ambient particles (optimized for phones)
 window.addEventListener('load',()=>{const splash=document.getElementById('cinematicSplash');setTimeout(()=>splash&&splash.classList.add('hide'),5600);});
 (()=>{const c=document.getElementById('ambientCanvas');if(!c)return;const ctx=c.getContext('2d');let w=0,h=0,dots=[];function resize(){w=c.width=Math.floor(innerWidth*(devicePixelRatio||1));h=c.height=Math.floor(innerHeight*(devicePixelRatio||1));c.style.width=innerWidth+'px';c.style.height=innerHeight+'px';ctx.setTransform(devicePixelRatio||1,0,0,devicePixelRatio||1,0,0);dots=Array.from({length:Math.min(34,Math.max(14,Math.floor(innerWidth/13)))},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.5+.35,v:Math.random()*.22+.06,a:Math.random()*.32+.06,p:Math.random()*6.28}));}function draw(){ctx.clearRect(0,0,innerWidth,innerHeight);for(const d of dots){d.y-=d.v;d.p+=.012;if(d.y< -4){d.y=innerHeight+4;d.x=Math.random()*innerWidth;}ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fillStyle='rgba(221,190,126,'+(d.a*(.7+.3*Math.sin(d.p)))+')';ctx.fill();}requestAnimationFrame(draw)}resize();addEventListener('resize',resize,{passive:true});draw();})();
-let data={bookings:[],travel:[]}, viewDate=new Date(), selectedDate=null;
-try{const saved=JSON.parse(localStorage.getItem(KEY)||'{}');data.bookings=saved.bookings||[];data.travel=saved.travel||[]}catch(e){}
+let data={bookings:[],travel:[],deletedBookings:[],deletedTravel:[]}, viewDate=new Date(), selectedDate=null;
+try{const saved=JSON.parse(localStorage.getItem(KEY)||'{}');data.bookings=saved.bookings||[];data.travel=saved.travel||[];data.deletedBookings=saved.deletedBookings||[];data.deletedTravel=saved.deletedTravel||[]}catch(e){}
 const $=id=>document.getElementById(id);
 const fmtDate=d=>d?new Date(d+'T12:00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'}):'—';
 const inr=n=>'₹'+Number(n||0).toLocaleString('en-IN',{maximumFractionDigits:0});
@@ -403,11 +403,11 @@ function overlaps(a,b){let ae=a.endDate||a.startDate,be=b.endDate||b.startDate;r
 function resetBookingForm(){$('bookingForm').reset();$('editId').value='';$('bookingFormTitle').textContent='New booking';$('conflictNotice').style.display='none';$('startDate').value=todayISO();$('endDate').value=todayISO();updateRangeHint()}
 $('bookingForm').addEventListener('submit',e=>{e.preventDefault();let id=$('editId').value||String(Date.now());if(!$('endDate').value){$('endDate').value=$('startDate').value}if($('endDate').value<$('startDate').value){alert('End date cannot be before start date.');return}let b={id,client:$('client').value.trim(),startDate:$('startDate').value,endDate:$('endDate').value,shootType:$('shootType').value,location:$('location').value.trim(),travelCost:Number($('travelCost').value||0),travelPaidBy:$('travelPaidBy').value,packagePrice:Number($('packagePrice').value||0),advancePaid:Number($('advancePaid').value||0),status:$('status').value,addedBy:$('addedBy').value,notes:$('notes').value.trim()};let conflicts=data.bookings.filter(x=>x.id!==id&&overlaps(x,b)&&x.status!=='Completed');if(conflicts.length&&!window.confirm('Date conflict with: '+conflicts.map(x=>x.client).join(', ')+'. Save anyway?'))return;let idx=data.bookings.findIndex(x=>x.id===id);if(idx>=0)data.bookings[idx]=b;else data.bookings.push(b);save();resetBookingForm();openTab('home')});
 function editBooking(id){let b=data.bookings.find(x=>x.id===id);if(!b)return;openTab('add');$('editId').value=b.id;$('client').value=b.client;$('startDate').value=b.startDate;$('endDate').value=b.endDate||b.startDate;updateRangeHint();$('shootType').value=b.shootType||'Wedding';$('location').value=b.location||'';$('travelCost').value=b.travelCost||'';$('travelPaidBy').value=b.travelPaidBy||'Client';$('packagePrice').value=b.packagePrice||'';$('advancePaid').value=b.advancePaid||'';$('status').value=b.status||'Confirmed';$('addedBy').value=b.addedBy||'Client';$('notes').value=b.notes||'';$('bookingFormTitle').textContent='Edit booking'}
-function deleteBooking(id){if(confirm('Delete this booking?')){data.bookings=data.bookings.filter(b=>b.id!==id);save()}}
+function deleteBooking(id){if(confirm('Delete this booking?')){data.bookings=data.bookings.filter(b=>b.id!==id);data.deletedBookings=[...new Set([...(data.deletedBookings||[]),String(id)])];save()}}
 function resetTravelForm(){$('travelForm').reset();$('travelEditId').value='';$('tripDate').value=todayISO()}
 $('travelForm').addEventListener('submit',e=>{e.preventDefault();let id=$('travelEditId').value||String(Date.now()),t={id,tripName:$('tripName').value.trim(),tripDate:$('tripDate').value,tripAmount:Number($('tripAmount').value||0),tripPaidBy:$('tripPaidBy').value,tripCategory:$('tripCategory').value,tripRoute:$('tripRoute').value.trim(),tripNote:$('tripNote').value.trim()};let idx=data.travel.findIndex(x=>x.id===id);if(idx>=0)data.travel[idx]=t;else data.travel.push(t);save();resetTravelForm()});
 function editTravel(id){let t=data.travel.find(x=>x.id===id);if(!t)return;openTab('travel');$('travelEditId').value=t.id;$('tripName').value=t.tripName;$('tripDate').value=t.tripDate;$('tripAmount').value=t.tripAmount;$('tripPaidBy').value=t.tripPaidBy||'Me';$('tripCategory').value=t.tripCategory||'Other';$('tripRoute').value=t.tripRoute||'';$('tripNote').value=t.tripNote||''}
-function deleteTravel(id){if(confirm('Delete this expense?')){data.travel=data.travel.filter(t=>t.id!==id);save()}}
+function deleteTravel(id){if(confirm('Delete this expense?')){data.travel=data.travel.filter(t=>t.id!==id);data.deletedTravel=[...new Set([...(data.deletedTravel||[]),String(id)])];save()}}
 function changeMonth(n){viewDate.setMonth(viewDate.getMonth()+n);renderCalendar()}
 function renderCalendar(){let y=viewDate.getFullYear(),m=viewDate.getMonth();$('monthLabel').textContent=viewDate.toLocaleDateString('en-IN',{month:'long',year:'numeric'});let first=new Date(y,m,1).getDay(),days=new Date(y,m+1,0).getDate(),html=['S','M','T','W','T','F','S'].map(d=>`<div class="dayname">${d}</div>`).join('');for(let i=0;i<first;i++)html+='<div class="day blank"></div>';for(let d=1;d<=days;d++){let iso=y+'-'+String(m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0'),isToday=iso===todayISO(),booked=data.bookings.some(b=>iso>=(b.startDate||'')&&iso<=(b.endDate||b.startDate||'')),travel=data.travel.some(t=>t.tripDate===iso);html+=`<button class="day ${isToday?'today':''} ${booked?'booked':''} ${travel?'travel':''}" onclick="showDay('${iso}')">${d}</button>`}$('calendarGrid').innerHTML=html;if(!selectedDate)selectedDate=todayISO();showDay(selectedDate)}
 function showDay(iso){selectedDate=iso;let b=data.bookings.filter(x=>iso>=x.startDate&&iso<=(x.endDate||x.startDate)),t=data.travel.filter(x=>x.tripDate===iso);$('selectedDayList').innerHTML=`<div class="section-head"><div><h3>${fmtDate(iso)}</h3><p>Schedule for selected day</p></div></div>`+(b.length?b.map(bookingCard).join(''):'')+(t.length?t.map(travelCard).join(''):'')+(!b.length&&!t.length?'<div class="card empty">Nothing scheduled for this day.</div>':'')}
@@ -450,14 +450,16 @@ $('startDate').addEventListener('change',()=>{if(!$('endDate').value||$('endDate
   let user = null;
   let syncing = false;
 
-  function mergeRecords(remote, local) {
-    const map = new Map();
-    [...(remote || []), ...(local || [])].forEach(item =>
-      map.set(String(item.id), item)
-    );
-    return [...map.values()];
-  }
-
+  function mergeRecords(remote, local, deleted) {
+  const removed = new Set((deleted || []).map(String));
+  const map = new Map();
+  [...(remote || []), ...(local || [])].forEach(item => {
+    if (!removed.has(String(item.id))) {
+      map.set(String(item.id), item);
+    }
+  });
+  return [...map.values()];
+}
   async function syncCloud() {
     if (!user || syncing) return;
     syncing = true;
@@ -490,9 +492,11 @@ $('startDate').addEventListener('change',()=>{if(!$('endDate').value||$('endDate
         .maybeSingle();
       if (error) throw error;
 
-      const remote = row?.app_data || { bookings: [], travel: [] };
-      data.bookings = mergeRecords(remote.bookings, data.bookings);
-      data.travel = mergeRecords(remote.travel, data.travel);
+      const remote = row?.app_data || {};
+data.deletedBookings = [...new Set([...(remote.deletedBookings || []), ...(data.deletedBookings || [])].map(String))];
+data.deletedTravel = [...new Set([...(remote.deletedTravel || []), ...(data.deletedTravel || [])].map(String))];
+data.bookings = mergeRecords(remote.bookings, data.bookings, data.deletedBookings);
+data.travel = mergeRecords(remote.travel, data.travel, data.deletedTravel);
       localStorage.setItem(KEY, JSON.stringify(data));
       render();
       renderHistory();
