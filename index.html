@@ -417,4 +417,131 @@ $('startDate').value=todayISO();$('endDate').value=todayISO();$('tripDate').valu
 function updateRangeHint(){let a=$('startDate').value,z=$('endDate').value;if(!a){$('dateRangeHint').textContent='Choose the first and last shoot dates to see the full booking period.';return}if(!z){$('dateRangeHint').textContent='Choose the last shoot date.';return}if(z<a){$('dateRangeHint').textContent='End date must be on or after the start date.';return}let days=Math.round((new Date(z+'T12:00:00')-new Date(a+'T12:00:00'))/86400000)+1;$('dateRangeHint').textContent='Booking period: '+fmtDate(a)+' → '+fmtDate(z)+' · '+days+' day'+(days===1?'':'s')}
 $('startDate').addEventListener('change',()=>{if(!$('endDate').value||$('endDate').value<$('startDate').value)$('endDate').value=$('startDate').value;updateRangeHint()});$('endDate').addEventListener('change',updateRangeHint);updateRangeHint();render();setTimeout(showUpcomingAlert,1200);
 </script><div id="successToast" class="success-toast" role="status" aria-live="polite"></div>
-</body></html>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(async function () {
+  const URL = 'https://kdetnlzkodsplfsbedxq.supabase.co';
+  const KEY_PUBLIC = 'sb_publishable_Ljf70zlTbDPrQUyMldoWUA_UN8HuO-m';
+  const client = window.supabase.createClient(URL, KEY_PUBLIC);
+
+  const note = [...document.querySelectorAll('p')].find(p =>
+    p.textContent.includes('Cloud sync is not enabled yet.')
+  );
+  if (!note) return;
+
+  const panel = document.createElement('div');
+  panel.innerHTML = `
+    <div class="card" style="margin-top:14px">
+      <h3>Cloud Sync · Clicks by PP</h3>
+      <p id="cloudStatus">Sign in using the same account on both devices.</p>
+      <input id="cloudEmail" type="email" placeholder="Email" style="width:100%;margin:6px 0">
+      <input id="cloudPassword" type="password" placeholder="Password" style="width:100%;margin:6px 0">
+      <div class="row">
+        <button class="btn primary" id="cloudLogin">Sign in</button>
+        <button class="btn" id="cloudSignup">Create account</button>
+        <button class="btn" id="cloudLogout" style="display:none">Sign out</button>
+      </div>
+    </div>`;
+  note.parentElement.appendChild(panel);
+
+  const el = id => document.getElementById(id);
+  const status = msg => el('cloudStatus').textContent = msg;
+  let user = null;
+  let syncing = false;
+
+  function mergeRecords(remote, local) {
+    const map = new Map();
+    [...(remote || []), ...(local || [])].forEach(item =>
+      map.set(String(item.id), item)
+    );
+    return [...map.values()];
+  }
+
+  async function syncCloud() {
+    if (!user || syncing) return;
+    syncing = true;
+    try {
+      const { error } = await client.from('studio_data').upsert({
+        user_id: user.id,
+        app_data: data,
+        updated_at: new Date().toISOString()
+      }, { onConflict: 'user_id' });
+      if (error) throw error;
+      status('✓ Cloud sync successful. Records saved.');
+    } catch (e) {
+      status('Sync error: ' + e.message);
+    } finally {
+      syncing = false;
+    }
+  }
+
+  async function activate(account) {
+    user = account;
+    el('cloudLogin').style.display = 'none';
+    el('cloudSignup').style.display = 'none';
+    el('cloudLogout').style.display = '';
+    status('Loading cloud records...');
+    try {
+      const { data: row, error } = await client
+        .from('studio_data')
+        .select('app_data')
+        .eq('user_id', user.id)
+        .maybeSingle();
+      if (error) throw error;
+
+      const remote = row?.app_data || { bookings: [], travel: [] };
+      data.bookings = mergeRecords(remote.bookings, data.bookings);
+      data.travel = mergeRecords(remote.travel, data.travel);
+      localStorage.setItem(KEY, JSON.stringify(data));
+      render();
+      renderHistory();
+      await syncCloud();
+    } catch (e) {
+      status('Cloud loading error: ' + e.message);
+    }
+  }
+
+  const originalSave = save;
+  save = function () {
+    originalSave();
+    syncCloud();
+  };
+
+  el('cloudLogin').onclick = async () => {
+    status('Signing in...');
+    const { data: result, error } = await client.auth.signInWithPassword({
+      email: el('cloudEmail').value.trim(),
+      password: el('cloudPassword').value
+    });
+    if (error) return status(error.message);
+    await activate(result.user);
+  };
+
+  el('cloudSignup').onclick = async () => {
+    status('Creating account...');
+    const { data: result, error } = await client.auth.signUp({
+      email: el('cloudEmail').value.trim(),
+      password: el('cloudPassword').value
+    });
+    if (error) return status(error.message);
+    if (result.session) await activate(result.user);
+    else status('Check your email to confirm your account, then sign in.');
+  };
+
+  el('cloudLogout').onclick = async () => {
+    await client.auth.signOut();
+    user = null;
+    el('cloudLogin').style.display = '';
+    el('cloudSignup').style.display = '';
+    el('cloudLogout').style.display = 'none';
+    status('Signed out. Device records remain saved.');
+  };
+
+  const { data: session } = await client.auth.getSession();
+  if (session.session?.user) await activate(session.session.user);
+})();
+</script>
+
+</body>
+</html>
